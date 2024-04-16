@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  postfix_proxy:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    volumes:
+       # Mount the postfix configuration file
+      - ./on_host/config:/config
